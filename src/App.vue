@@ -1,87 +1,45 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
-import NavBar from './components/NavBar.vue'
-import NavBarItem from './components/NavBarItem.vue'
+import YankNavBar from './components/YankNavBar.vue'
+import YankLink from './components/YankLink.vue'
 import YankButton from './components/YankButton.vue'
+import YankFooter from './components/YankFooter.vue'
 </script>
 
 <template>
- <NavBar NavTitle="HELLO">
-  <NavBarItem Text="About Me" Link="#about"></NavBarItem>
-  <NavBarItem Text="Mission" Link="#Mission"></NavBarItem>
-  <NavBarItem Text="What I do" Link="#Acheivements"></NavBarItem>
-  <YankButton Text="Test Button"></YankButton>
- </NavBar>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+ <YankNavBar NavTitle="HELLO">
+  <YankLink Link="#about">About Me</YankLink>
+  <YankLink Link="#Mission">Mission</YankLink>
+  <YankLink Link="#Acheivements">What I do</YankLink>
+  <YankButton>My Button</YankButton>
+ </YankNavBar>
+ 
+ <section>
+    <img src="#" alt="YankLogo">
+    <div class="text">
+        <h1>HEY THERE!</h1>
+        <p>In case you haven't noticed, this is a template website :P <br/>
+        This is to show what features you can use and how to use the Yank components.</p>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+ </section>
+ <YankFooter>
+    <h1>HELLO</h1>
+    <h2>World</h2>
+ </YankFooter>
 </template>
 
 <style>
 @import './assets/base.css';
 @import './assets/bwpalette.css';
 
-#app {
-  margin: 0 auto;             
-  font-weight: normal;
-}
-
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
+section {
+    width: 80%;
+    margin: 0 auto;
     display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
 }
 </style>

@@ -1,19 +1,14 @@
 <script setup>
-defineProps({
-  Text: {
-    type: String,
-    required: true
-  }
-})
 </script>
 <template>
-  <button> {{ Text }}</button>
+  <button><slot></slot></button>
 </template>
 
 <style scoped>
     button {
         border: none;
         padding: 10px 20px;
+        height: 50px;
         background-color: var(--complementary-light);
         font-size: 20px;
         color: var(--primary);
