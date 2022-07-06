@@ -15,7 +15,7 @@
         margin-top: auto;
         background-color: var(--primary-soft);
         color: var(--background);
-        padding: 20px 40px;
+        padding: 20px 100px;
     }
 
     #footer-items{

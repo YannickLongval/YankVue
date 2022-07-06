@@ -2,13 +2,18 @@
 defineProps({
   NavTitle: {
     type: String,
-    required: true
+    default: ''
+  },
+  NavLogo: {
+    type: String,
+    default: ''
   }
 })
 </script>
 <template>
 <nav>
-  <h1>{{ NavTitle }}</h1>
+  <img v-if="NavLogo != ''" v-bind:src="'./src/components/icons/' + NavLogo" alt="LOGO"/>
+  <h1 v-if="NavTitle != ''">{{NavTitle}}</h1>
   <div id="navbar-items">
     <slot></slot>
   </div>
@@ -16,19 +21,23 @@ defineProps({
 </template>
 
 <style scoped>
-    
-    * {
-        background-color: var(--background-soft);
-
-    }
 
     nav {
+      position: sticky;
+      z-index: 100;
+      top: 0;
       width: 100%;
       height: 80px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       padding: 0 40px;
+      background-color: var(--background-soft);
+    }
+
+    img {
+      height: 60px;
+      margin: auto 0;
     }
 
     h1{
@@ -43,4 +52,8 @@ defineProps({
       justify-content: space-between;
       width: 500px;
     }
+    .dark{
+      background-color: var(--primary-soft);
+    }
+
 </style>
